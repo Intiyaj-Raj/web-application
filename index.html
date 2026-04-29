@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>web-application</title>
     <link rel="stylesheet" href="./style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <div id="container">
         <div id="page">
-            <div id="login">
+            <div id="login" class="animate__animated animate__flipInY">
                 <h1>Login </h1>
 
                 <form action="" id="login_form">
@@ -22,27 +25,48 @@
 
                     <button type="submit" id="login_btn">Login</button>
                 </form>
-                <p>Don't have an account ? <span> Sign up</span></p>
+                <p>Don't have an account ? <span onclick="signupBox()"> Sign up</span></p>
             </div>
 
-            <div id="sign-up">
+            <div id="sign-up" class="animate__animated animate__flipInY">
                 <h1>Sign Up</h1>
 
                 <form action="" id="signup_form">
                     <input type="text" name="" id="username" placeholder="Enter name">
 
                     <input type="email" name="" id="email" placeholder="Enter email">
-
+                    <small style="" id="email_notice"><i class="fa-solid fa-triangle-exclamation"></i> &nbsp;Email
+                        Already Registered</small>
                     <input type="tel" name="" id="phone" placeholder="Enter phone no. ">
 
                     <input type="password" name="" id="password" placeholder="Enter password">
+                    <button type="submit" id="signup_btn">Sign up</button>
                 </form>
-                <button type="submit" id="signup_btn">Sign up</button>
-                <p>Already have an account ? <span> Login</span></p>
+                <p>Already have an account ? <span onclick="loginBox()"> Login</span></p>
             </div>
         </div>
     </div>
 
+
+
+    <script>
+        let login_box = document.getElementById("login")
+        let signup_box = document.getElementById("sign-up")
+
+        function loginBox() {
+            login_box.style.display = "block"
+            signup_box.style.display = "none"
+
+        }
+
+        function signupBox() {
+            login_box.style.display = "none"
+            signup_box.style.display = "block"
+        }
+
+    </script>
+
+    <script src="./login_signup.js"></script>
 </body>
 
 </html>
