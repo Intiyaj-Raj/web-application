@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+}
+
+#page {
+    width: 300px;
+    height: auto;
+    background: white;
+    box-shadow: 0px 0px 0px 2px #ccc;
+    border-radius: 6px;
+    padding: 30px 20px;
+    font-family: sans-serif;
+}
+
+#login {
+    display: none;
+}
+
+#login h1,
+#sign-up h1 {
+    text-align: center;
+}
+
+#login_form {
+    margin-top: 40px;
+}
+
+#signup_form {
+    margin-top: 15px;
+}
+
+#login_email,
+#login_password,
+#username,
+#email,
+#phone,
+#password {
+    border: none;
+    padding: 10px;
+    padding-left: 3px;
+    width: 100%;
+    border-bottom: 1.3px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 16px;
+    outline: none;
+    color: #727272;
+}
+
+#login_btn,
+#signup_btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, #E100FF, #7F00FF);
+    color: white;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#login p,
+#sign-up p {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+#sign-up p {
+    margin-top: 10px;
+}
+
+#login span,
+#sign-up span {
+    cursor: pointer;
+    color: blue;
+}
+
+#login span:hover,
+#sign-up span:hover {
+    text-decoration: underline;
+    text-decoration-color: purple;
+}
+
+@media (max-width: 550px) {
+    #page {
+        width: 90%;
+    }
+}
