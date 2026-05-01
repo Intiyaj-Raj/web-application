@@ -99,12 +99,16 @@
     text-decoration-color: purple;
 }
 
-#email_notice {
+#email_notice,
+#login_email_warning,
+#login_password_warning {
     color: red;
     display: none;
 }
 
-#email_notice i {
+#email_notice i,
+#login_email_warning i,
+#login_password_warning i {
     margin-top: 5px;
 }
 
