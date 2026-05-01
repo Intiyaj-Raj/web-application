@@ -92,11 +92,11 @@ login_form.onsubmit = function (e) {
 
         let correct_email = atob(obj_data.email)
         let correct_password = atob(obj_data.password)
-
         if (email.value == correct_email && password.value == correct_password) {
-            alert("Login Success")
-            login_form.reset()
-        } else {
+            sessionStorage.setItem("user", btoa(email.value))
+            window.location.replace("./profile.html")
+        }
+        else {
             login_password_war.style.display = "block"
             password.style.borderBottomColor = "red"
 
