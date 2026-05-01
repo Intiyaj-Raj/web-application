@@ -1,5 +1,8 @@
-let signup_form = document.getElementById("signup_form")
+/* 
+ sign up coding"
+*/
 
+let signup_form = document.getElementById("signup_form")
 signup_form.onsubmit = function (e) {
     e.preventDefault()
     let user = document.getElementById("username").value
@@ -30,6 +33,12 @@ signup_form.onsubmit = function (e) {
     }
 }
 
+
+
+/*  
+ email validation coding          
+*/
+
 let emailInput = document.getElementById("email")
 emailInput.onchange = function () {
     let email = document.getElementById("email").value
@@ -49,4 +58,42 @@ emailInput.onchange = function () {
             signup_btn.style.background = "linear-gradient(to right, #E100FF, #7F00FF)"
         }
     }
+}
+
+
+
+/*
+        login form
+
+ */
+let login_form = document.getElementById("login_form")
+let passwordInput = document.getElementById("login_password")
+
+login_form.onsubmit = function (e) {
+    e.preventDefault()
+
+    let email = document.getElementById("login_email").value
+    let password = passwordInput.value
+
+    if (localStorage.getItem(email) == null) {
+        alert("Your email is not registered.")
+    } else {
+        let obj_data = JSON.parse(localStorage.getItem(email))
+
+        if (email == obj_data.email && password == obj_data.password) {
+            alert("Login Success")
+            login_form.reset()
+            passwordInput.style.borderBottomColor = "#ccc"
+
+        } else {
+            alert("Wrong password")
+            passwordInput.style.borderBottomColor = "red"
+            passwordInput.style.color = "red"
+        }
+    }
+}
+
+passwordInput.oninput = function () {
+    passwordInput.style.borderBottomColor = "#ccc"
+    passwordInput.style.color = "#727272"
 }
