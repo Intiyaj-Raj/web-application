@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 <head>
     <meta charset="UTF-8">
@@ -20,23 +21,43 @@
     <i class="fas fa-plus-circle" id="new_contact"></i>
 
 
-    <div id="contact_bg">
+    <h1>How Are Your</h1>
+
+    <p>Hiea;sdkljn</p>
+    <div id="contact_bg" class="animate__animated animate__fadeIn">
         <div class="contact_center">
-            <div id="add_contact_box">
+            <div id="add_contact_box" class="animate__animated animate__slideInDown">
                 <h2>Add new contact</h2>
                 <form action="">
-
                     <input type="text" name="" id="c_name" placeholder="Enter Name">
                     <input type="tel" name="" id="c_num" placeholder="Enter Mobile No.">
-
-                    <button type="button" id="add">Add</button>
-                    <button type="button" id="close">Close</button>
+                    <center>
+                        <button type="button" id="add">Add</button>
+                        <button type="button" id="close">Close</button>
+                    </center>
                 </form>
                 </form>
-
             </div>
         </div>
     </div>
+
+
+    <script>
+        // add new contact box 
+
+        let add_icon = document.getElementById("new_contact")
+        add_icon.onclick = function () {
+            let bg = document.getElementById("contact_bg")
+            bg.style.display = "block"
+        }
+
+        let close = document.getElementById("close")
+        close.onclick = function () {
+            let bg = document.getElementById("contact_bg")
+            bg.style.display = "none"
+        }
+
+    </script>
 </body>
 
 </html>
