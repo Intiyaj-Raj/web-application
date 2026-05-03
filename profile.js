@@ -11,7 +11,7 @@ window.onload = function () {
         let profile_name = document.getElementById("profile_name")
         profile_name.innerHTML = atob(obj_data.username)
 
-        // hide profile  image upload option when user already login
+        // hide profile image upload option when user already login
         if (localStorage.getItem(user_email + "image") != null) {
             let page_cover = document.getElementById("page_cover")
             page_cover.style.display = "none"
