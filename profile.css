@@ -8,6 +8,16 @@
         background: linear-gradient(to right, #f4a2ce, #ff92ce);
     }
 
+    #container {
+        width: 100%;
+        height: 100vh;
+        background: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+    }
+
     #page_cover {
         width: 100%;
         height: 100vh;

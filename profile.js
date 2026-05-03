@@ -4,6 +4,19 @@ window.onload = function () {
     }
     else {
 
+        // logout coding
+
+        var logout = document.getElementById("logout")
+        logout.onclick = function () {
+            sessionStorage.clear()
+            let logout_text = document.getElementById("logout_text")
+            logout_text.innerHTML = "Please Wait..."
+            setTimeout(function () {
+                window.location = "./index.html"
+            }, 2000)
+        }
+
+
         /* Profile name coding */
         let user_email = sessionStorage.getItem("user")
         let json_text = localStorage.getItem(user_email)
@@ -11,9 +24,20 @@ window.onload = function () {
         let profile_name = document.getElementById("profile_name")
         profile_name.innerHTML = atob(obj_data.username)
 
+        document.getElementById("profile_username").innerHTML = atob(obj_data.username)
+
+
+
+        // profile image coding
+        let img_url = localStorage.getItem(user_email + "image")
+        let profile_picture = document.getElementById("profile_picture")
+        profile_picture.style.backgroundImage = "url(" + img_url + ")"
+        profile_picture.style.backgroundSize = "cover"
+        profile_picture.style.backgroundPosition = "center"
+
         // hide profile image upload option when user already login
         if (localStorage.getItem(user_email + "image") != null) {
-            let page_cover = document.getElementById("page_cover")
+            let page_cover = document.getElementById("container")
             page_cover.style.display = "none"
         }
 
@@ -36,8 +60,9 @@ window.onload = function () {
 
                 next_btn.onclick = function () {
                     localStorage.setItem(user_email + "image", filename)
-                    let page_cover = document.getElementById("page_cover")
+                    let page_cover = document.getElementById("container")
                     page_cover.style.display = "none"
+                    window.location = location.href
                 }
             }
         }
